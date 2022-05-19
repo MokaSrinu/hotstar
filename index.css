@@ -1,0 +1,53 @@
+h1{
+    text-align:center;
+    color:teal;
+}
+#searchbox{
+    width:500px;
+    margin:auto;
+    
+}
+input{
+    padding:10px;
+    width:100%;
+}
+#container{
+    width:520px;
+    margin:auto;
+    height:300px;
+    overflow-y: scroll;
+    margin-left:512px
+} 
+p:hover{
+    color:blue;
+}
+
+
+#container{
+   
+    margin:auto;
+    padding:20px;
+    position:relative;
+}
+#container>div{
+    width:100%;
+    padding:10px;
+}
+#container>div img{
+    width:400px;
+    height:500px;
+}
+#tag{
+    position:absolute;
+    top:60%;
+    left:50%;
+    margin-top:-50px;
+    width:400px;
+    color:white;
+     font-weight:bold;
+     font-family:arial;
+     font-size:28px;
+     background-color:teal;
+     transform: translate(-54%, -20%);
+}
+
