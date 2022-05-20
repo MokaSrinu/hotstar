@@ -13,71 +13,7 @@ async function fetchhotstar(){
     }
 }
 
-/*
-  
-  Poster: "https://m.media-amazon.com/images/M/MV5BYzJhMzMwODQtZjdhMC00…EyL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMzUzOTA2MDI@._V1_SX300.jpg"
-​​
-Title: "Spid"
-​​
-Type: "movie"
-​​
-Year: "2016"
-​​
-imdbID: "tt5671882"
 
-
-
-Actors: "Ceri John, Dave Lane, Charlotte Mann"
-​
-Awards: "N/A"
-​
-BoxOffice: "N/A"
-​
-Country: "United Kingdom"
-​
-DVD: "N/A"
-​
-Director: "Mike Murphy"
-​
-Genre: "Documentary"
-​
-Language: "English"
-​
-Metascore: "N/A"
-​
-Plot: "N/A"
-​
-Poster: "N/A"
-​
-Production: "N/A"
-​
-Rated: "N/A"
-​
-Ratings: Array []
-​
-Released: "27 Jan 2012"
-​
-Response: "True"
-​
-Runtime: "99 min"
-​
-Title: "SPI: Caerleon"
-​
-Type: "movie"
-​
-Website: "N/A"
-​
-Writer: "Dave Lane"
-​
-Year: "2012"
-​
-imdbID: "tt5025452"
-​
-imdbRating: "N/A"
-​
-imdbVotes: "N/A"
-
-*/
 
 function displaydata(data){
     document.querySelector("#container").innerHTML=""
@@ -126,6 +62,7 @@ async function displaymoviedata(){
     }
 }
 
+let url2=`https://api.themoviedb.org/4/?api_key=36c22518537c38126cf3f7290a4e1da7/movie/recommendations?page=1`
 //https://image.tmdb.org/t/p/w500
 
 function searchthemovie(){

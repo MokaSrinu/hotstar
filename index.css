@@ -15,7 +15,7 @@ input{
     width:520px;
     margin:auto;
     height:300px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     margin-left:512px
 } 
 p:hover{
@@ -49,5 +49,18 @@ p:hover{
      font-size:28px;
      background-color:teal;
      transform: translate(-54%, -20%);
+}
+#navbar{
+    display:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: darkblue;
+    
+}
+#navbar a{
+    color:white;
+    text-decoration: none;
 }
 

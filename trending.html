@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #container{
+           width:100%;
+           display:grid;
+           grid-template-columns: repeat(3,1fr);
+           gap:20px;
+       }
+       #container div{
+           display:flex;
+           flex-direction:column;
+           justify-content: center;
+           align-items: center;
+       }
+       #container div img{
+           width:450px;
+           height:600px;
+       }
+       h2{
+           text-align:center;
+           color:darkblue
+       }
+       p{
+           color:teal
+       }
+       #navbar{
+    display:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: darkblue;
+    
+}
+#navbar a{
+    color:white;
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <p><a href="./index.html">HOME</a></p>
+        <p><a href="./trending.html">Trending</a></p>
+    </div>
+    <h2>Trending Movies</h2>
+    <div id="container"></div>
+</body>
+<script>
+   
+   async function fetchhotstar(){
+    try {
+        var url=`https://api.themoviedb.org/3/trending/all/day?api_key=36c22518537c38126cf3f7290a4e1da7`;
+        let response=await fetch(url);
+        let data=await response.json();
+        console.log(data.results);
+        displaydata(data.results);
+        
+    } catch (error) {
+        
+    }
+}
+fetchhotstar();
+
+function displaydata(data){
+  let container=document.querySelector("#container");
+  container.innerHTML="";
+  data.forEach((ele)=>{
+    let {id,title,release_date,poster_path}=ele;
+    let card=document.createElement("div");
+    let image=document.createElement("img");
+    image.src=`https://image.tmdb.org/t/p/w500${poster_path}`;
+    let Title=document.createElement("p");
+    Title.innerText=`Title:${title}`;
+    let Id=document.createElement("p");
+    Id.innerText=`ID:${id}`;
+    let releasedate=document.createElement("p");
+    releasedate.innerText=`Release_date:${release_date}`;
+    card.append(image,Title,Id,releasedate);
+    container.append(card)
+  })
+}
+
+</script>
+</html>
